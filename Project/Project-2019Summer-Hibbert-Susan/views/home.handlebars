@@ -1,0 +1,71 @@
+<nav class = "myMenu">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="fav-dogs">Favorite Dogs</a></li>
+		<li><a href="form">Subscribe</a></li>
+		<li><a href="download">Download</a></li>
+		<li><a href="link">Links</a></li>
+	</ul>
+</nav>
+	
+<h1> Welcome to Milo's Page!</h1>
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+    <img src="BabyMilo1.jpg" style="width:50%">
+	</div>
+
+	<div class="mySlides fade">
+    <img src="Milo1.jpg" style="width:50%">
+	</div>
+
+	<div class="mySlides fade">
+    <img src="Milo2.jpg" style="width:50%">
+	</div>
+  
+	<div class="mySlides fade">
+    <img src="Milo3.jpg" style="width:50%">
+	</div>
+  
+	<div class="mySlides fade">
+    <img src="Milo4.jpg" style="width:50%">
+	</div>
+   
+    <div class="mySlides fade">
+    <img src="BabyMilo2.jpg" style="width:50%">
+	</div>
+   
+	<div class="mySlides fade">
+    <img src="Milo6.jpg" style="width:50%">
+	</div>
+  
+</div>
+<br>
+<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		}
+		slideIndex++;
+		if (slideIndex > slides.length){
+			slideIndex = 1;
+		}		
+
+		slides[slideIndex-1].style.display = "block";  
+		setTimeout(showSlides, 2000);
+	}
+</script>
+<br>
+<br>
+<div class = "myScroll">
+Milo is a German Shepherd, born on 18th December 2016 in Richmond, B.C., Canada.
+He loves catching his ball, playing tug-of-war with his rope toy and chasing bees
+in the garden. His favorite foods are cheese, oatmeal and bacon (which unfortunately
+for him, he doesn't get that often). He is the bestest boy. 
+</div>

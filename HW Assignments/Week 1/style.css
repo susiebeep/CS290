@@ -1,0 +1,15 @@
+table, th, td {
+	border:1px solid black;
+	border-style:solid;
+}
+.outer-content{
+	background-color:pink;
+	width:75%;
+	margin:20px;
+}
+.inner-content{
+	background-color:lightskyblue;
+	text-align:center;
+	margin:auto;
+	width:75%;
+}

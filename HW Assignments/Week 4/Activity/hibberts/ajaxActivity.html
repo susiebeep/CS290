@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+	
+      document.addEventListener('DOMContentLoaded', cityButton);
+	  document.addEventListener('DOMContentLoaded', zipButton);
+
+      function cityButton(){
+      document.getElementById('citySubmit').addEventListener('click', function(event){
+	  var req = new XMLHttpRequest();
+	  var cityInput = {city:null};
+	  cityInput.city = document.getElementById('city').value;
+      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + cityInput.city + "&appid=1d74c175dd41f247d01120b1ded37b4b", true);
+      req.addEventListener('load',function(){
+		if(req.status >= 200 && req.status < 400){
+			var response = JSON.parse(req.responseText);
+			document.getElementById('citySelect').textContent = response.name;
+			document.getElementById('temp').textContent = response.main.temp;
+			document.getElementById('humidity').textContent = response.main.humidity;
+		} else {
+			console.log("Error in network request: " + req.statusText);
+		}
+	  });
+	  req.send(null);
+      event.preventDefault(); 
+	  })
+	 } 
+	 
+	 function zipButton(){
+      document.getElementById('zipSubmit').addEventListener('click', function(event){
+	  var req = new XMLHttpRequest();
+	  var zipInput = {zip:null};
+	  zipInput.zip = document.getElementById('zip').value;
+      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + zipInput.zip + "&appid=1d74c175dd41f247d01120b1ded37b4b", true);
+	  req.addEventListener('load',function(){
+		if(req.status >= 200 && req.status < 400){
+			var response = JSON.parse(req.responseText);
+			document.getElementById('zipSelect').textContent = response.name;
+			document.getElementById('temp').textContent = response.main.temp;
+			document.getElementById('humidity').textContent = response.main.humidity;
+		} else {
+			console.log("Error in network request: " + req.statusText);
+		}
+	  });
+      req.send(null);
+      event.preventDefault(); 
+	  })
+	 } 
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend><h1>PART 1: Open Weather Map</h1></legend>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city">
+        <input type="submit" id="citySubmit">
+		<label for="zip">Zip Code:</label>
+		<input type="text" name="zip" id="zip">
+        <input type="submit" id="zipSubmit">
+      </fieldset>
+    </form>
+    <div>
+      <h2>Weather Results:</h2>
+      <ul>
+        <li><span>Selected City: </span><span id="citySelect"></span></li>
+		<li><span>Selected Zip Code: </span><span id="zipSelect"></span></li>
+        <li><span>Temperature: </span><span id="temp"></span></li>
+		 <li><span>Humidity: </span><span id="humidity"></span></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', bindButtons);
+
+      function bindButtons(){
+        document.getElementById('urlSubmit').addEventListener('click', function(event){
+          var req = new XMLHttpRequest();
+          var payload = {mySentData:null};
+          payload.mySentData = document.getElementById('mySentData').value;
+		  console.log(payload.mySentData);
+		  req.open('POST', 'http://httpbin.org/post', true);
+          req.setRequestHeader('Content-Type', 'application/json');
+		  req.addEventListener('load',function(){
+			if(req.status >= 200 && req.status < 400){
+				var response = JSON.parse(req.responseText);
+				document.getElementById('myResponse').textContent = response.data;
+		  } else {
+				console.log("Error in network request: " + req.statusText);
+		}
+	  });
+          req.send(JSON.stringify(payload));
+          event.preventDefault();
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend><h1>PART 2: POST Request</h1></legend>
+        <label for="mySentData">Enter Text</label>
+        <input type="text" name="mySentData" id="mySentData">
+        <input type="submit" id="urlSubmit">
+      </fieldset>
+    </form>
+    <div>
+      <h2>Response:</h2>
+      <ul>
+        <span></span><span id="myResponse"></span>
+      </ul>
+    </div>
+  </body>
+</html>

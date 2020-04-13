@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF - 8">
+		<title>HW Assignment: HTML/CSS</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<h1>HW Assignment: HTML/CSS</h1>
+		<h2>1. 6x6 Table</h2>
+		<table>
+			<caption>Who will win in a race in Mario Kart?</caption>
+			<thead>
+				<tr>
+					<th> 
+					<th>Mario
+					<th>Luigi
+					<th>Peach
+					<th>Yoshi
+					<th>Toad
+			<tbody>
+				<tr>
+					<td><i>Mario</i>
+					<td>n/a
+					<td>Mario
+					<td>Mario
+					<td>Yoshi
+					<td>Toad
+				<tr>
+					<td><i>Luigi</i>
+					<td>Mario
+					<td>n/a
+					<td>Peach
+					<td>Yoshi
+					<td>Toad
+				<tr>
+					<td><i>Peach</i>
+					<td>Mario
+					<td>Peach
+					<td>n/a
+					<td>Yoshi
+					<td>Toad
+				<tr>
+					<td><i>Yoshi</i>
+					<td>Yoshi
+					<td>Yoshi
+					<td>Yoshi
+					<td>n/a
+					<td>Toad
+				<tr>
+					<td><i>Toad</i>
+					<td>Toad
+					<td>Toad
+					<td>Toad
+					<td>Toad
+					<td>n/a 
+				<tr>
+					<td colspan = "2">Footer 1
+					<td colspan = "4">Footer 2		
+		</table>
+		
+		
+		<h2>2. List with 3 entries </h2>
+		<ul>
+			<li>Dogs</li>
+			<li>Cats</li>
+			<li>Bunnies</li>
+		</ul>
+		
+		
+		<h2>3. Div creation</h2>
+		<div class = "outer-content">
+		&nbsp
+			<div class = "inner-content">Division</div>
+		&nbsp
+		</div>
+		
+		
+		<h2>4a. GET request form</h2>
+		<form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method="get">
+			<fieldset>
+				<legend>Some GET Data</legend>
+				<fieldset>
+					<label>Text here:
+						<input type="text" name="text_input" size="30" maxlength="100">
+					</label>
+					<br />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Number here:
+						<input type="number" name="numerical_input" min="0" max="100">
+					</label>
+					<br />
+				</fieldset>
+				<br />
+				<fieldset>	
+					<label>Password here:
+						<input type="password" name="password_input" maxlength="100">
+					</label>
+					<br />
+				</fieldset>	
+			</fieldset>
+			<br />
+			<fieldset>
+				<legend>Select between:</legend>
+				<p>
+					<label>
+						<input type="radio" name="candy" value="Snickers" />Snickers</label>
+					<br />	
+					<label>
+						<input type="radio" name="candy" value="Skittles" />Skittles</label>
+					<br />
+					<label>
+						<input type="radio" name="candy" value="Mentos" />Mentos</label>
+				</p>
+				<br />
+				<input type="submit" value="Submit"/>
+			</fieldset>
+		</form>
+	
+	
+		<h2>4b. POST request form</h2>
+		<form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method="post">
+			<fieldset>
+				<legend>Some POST Data</legend>
+				<fieldset>
+					<label>Text here:
+						<input type="text" name="text_input" size="30" maxlength="100">
+					</label>
+					<br />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Number here:
+						<input type="number" name="numerical_input" min="0" max="100">
+					</label>
+					<br />
+				</fieldset>
+				<br />
+				<fieldset>	
+					<label>Password here:
+						<input type="password" name="password_input" maxlength="100">
+					</label>
+					<br />
+				</fieldset>	
+			</fieldset>
+			<br />
+			<fieldset>
+				<legend>Select between:</legend>
+				<p>
+					<label>
+						<input type="radio" name="candy" value="Snickers" />Snickers</label>
+					<br />	
+					<label>
+						<input type="radio" name="candy" value="Skittles" />Skittles</label>
+					<br />
+					<label>
+						<input type="radio" name="candy" value="Mentos" />Mentos</label>
+				</p>
+				<br />
+				<input type="submit" value="Submit"/>
+			</fieldset>
+		</form>
+	</body>
+</html>

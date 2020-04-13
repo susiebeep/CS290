@@ -1,0 +1,49 @@
+<script src = "js/clientjs.js"></script>
+<h1>Workout Table</h1>
+
+<form>
+	<h3>Insert Table Data:</h3>
+		Exercise Name: <input type="text" name="name" id= "name"><br>
+		Reps: <input type="text" name="reps" id = "reps"><br>
+		Weight: <input type="text" name="weight" id = "weight"><br>
+		Date: <input type="test" name="date" id = "date"><br>
+		Lbs: <input type="text" name="lbs" id = "lbs"><input type = "radio" name = "unit" id = "lbs">lbs<input type = "radio" name = "unit" value = "kgs" onclick = "kiloConvert();">kgs<br>
+       <input type="button" value = "Insert" id="insertSubmit" onclick = "insertButton()">
+</form>
+<br>	
+
+
+<table id = "myTable">	
+		<thead>
+			<th>name</th>
+			<th>reps</th>
+			<th>weight</th>
+			<th>date</th>
+			<th>lbs</th>
+		</thead>		
+		<tbody>
+		{{#each results}}
+			<tr id = {{this.id}}>
+				<td contenteditable='true'>{{this.name}}</td>
+				<td contenteditable='true'>{{this.reps}}</td>
+				<td contenteditable='true'>{{this.weight}}</td>
+				<td contenteditable='true'>{{this.date}}</td>
+				<td contenteditable='true'>{{this.lbs}}</td>
+				<td><form>
+					<input type="button" value = "Update" id="updateSubmit" onclick = "updateButton({{this.id}})">
+				</form></td>
+				<td><form>
+					<input type="button" value = "Delete" id="deleteSubmit" onclick = "deleteButton({{this.id}})">
+				</form></td>
+				<td><form><input type="hidden" name = "id" id= "id"></form></td>
+			</tr>	
+		{{/each}}
+		</tbody>	
+</table>
+<br>
+
+<script>
+function kiloConvert(){
+	document.getElementById("lbs").value *= 2.2;
+}	
+</script>

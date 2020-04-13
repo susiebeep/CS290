@@ -1,0 +1,13 @@
+<h1> {{this.reqType}} Request Received </h1>
+<h2> You sent the following data in the URL Query String: </h2>
+<ul>
+	{{#each dataListURL}}
+		<li> {{this.name}}: {{this.value}}
+	{{/each}}
+</ul>
+<h2> POST Request only - You sent the following data in the Request Body: </h2>	
+<ul>
+	{{#each dataListBody}}
+		<li> {{this.name}}: {{this.value}}
+	{{/each}}
+</ul>	
